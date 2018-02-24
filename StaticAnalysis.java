@@ -1,3 +1,16 @@
+/*
+ 	Written by A.N.TANVIR on 23 February,2018.
+ 	
+ 	# Tried to implement "Static Analysis" for finding out
+ 	the variables used in the input C code.
+ 	
+ 	N.B. : Done by an amateur coder! It can be modified any time. 
+ 	
+*/
+
+//==========================================================================================================================//
+
+
 package PackOfStaticAnalysis;
 
 import java.util.Scanner;
