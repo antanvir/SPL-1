@@ -12,7 +12,7 @@ public class StaticAnalysis {
 	//static Scanner input= new Scanner(new File("input.txt"));
 	
 	public static String tokens[] = {"int","double","float","char","bool","string"};
-	public static String delimeters = "[ ;'.\"){}]+";
+	public static String delimeters = "[ ;'.){}]+";
 	public static boolean integer=false, Double=false, Float=false, Char=false,
 			bool=false, string=false;
 	
@@ -37,9 +37,14 @@ public class StaticAnalysis {
 			
 			for(String word:lineSplit) {
 				
+				//System.out.println(word);
+				//System.out.println(word);
+				word=word.trim();
+				
 				if(integer==true||Double==true||Float==true||
 						Char==true||bool==true||string==true) {
 					
+					//System.out.println("\n\n"+word);
 					notVariable = FuncOrVar.varCheck(word);
 								//notVariable true means a function, false means variable.
 					
