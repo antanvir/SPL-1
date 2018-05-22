@@ -41,7 +41,7 @@ public class Read {
         String add ="sum is: ";
         String sub = "Subtraction result : ";
         int number=10;
-        double AreaOfCircle, radius;  
+        double AreaOfCircle, radius;  char ch="T";
 
         result = Add();
         System.out.println( add + result);

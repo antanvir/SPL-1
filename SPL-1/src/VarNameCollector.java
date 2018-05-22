@@ -4,6 +4,7 @@ package forspl;
 
 import static forspl.VarNameCollector.stackInt;
 import java.util.Stack;
+import java.util.regex.Pattern;
 
 public class VarNameCollector {
     
@@ -63,6 +64,12 @@ public class VarNameCollector {
         String str = stack.pop();
         
         tokenPosition= str.indexOf(tokens[i]);
+        
+        if(tokenPosition>0){
+            String substr = str.substring(0,tokenPosition);
+            str = str.replaceAll(substr, " ");
+            tokenPosition= str.indexOf(tokens[i]);
+        }
         semicolonPosition = str.indexOf(";");
         assignOperatorPos = str.indexOf("=");
         commaPosition = str.indexOf(",");
@@ -73,7 +80,7 @@ public class VarNameCollector {
                 int leftBracketPos, rightBracketPos;
                 leftBracketPos = str.indexOf("(");
                 rightBracketPos = str.indexOf(")");
-                str = str.substring(leftBracketPos, rightBracketPos+1);
+                str = str.substring(leftBracketPos+1, rightBracketPos);
             }
             
             String arr[];
@@ -93,14 +100,15 @@ public class VarNameCollector {
         else{
             
             if(assignOperatorPos!=-1 && commaPosition==-1)
-                str = str.substring(tokenPosition, assignOperatorPos+1);
-            else str = str.substring(tokenPosition, semicolonPosition+1);
+                str = str.substring(tokenPosition, assignOperatorPos);
+            else str = str.substring(tokenPosition, semicolonPosition);
             String arr[];
-            arr = str.split("[ ,=\\d]+");
+            arr = str.split("[ ,=]+");
             
             for(int j=1; j<arr.length; j++){
                 String variable = arr[j];
                 variable = variable.trim();
+                if(Pattern.matches("\\d",variable)) continue;
                 stack.push(variable);
             }
             
