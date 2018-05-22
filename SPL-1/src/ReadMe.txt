@@ -38,13 +38,13 @@ public class Read {
     public static void main(String[] args){  
 
         int result, numA,numB ;
-        String add ="sum is: ";
-        String sub = "Subtraction result : ";
+        String addMsg ="sum is: ";
+        String subMsg = "Subtraction result : ";
         int number=10;
         double AreaOfCircle, radius;  char ch="T";
 
         result = Add();
-        System.out.println( add + result);
+        System.out.println( addMsg + result);
 
         radius = in.nextDouble();
         CircleArea(radius);

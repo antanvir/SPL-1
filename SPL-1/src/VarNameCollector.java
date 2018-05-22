@@ -9,9 +9,7 @@ import java.util.regex.Pattern;
 public class VarNameCollector {
     
     static String tokens[] = {"int ","double ","float ","char ","boolean ","String "};
-    //static Stack<String> listInt,listDouble,listFloat,listChar,listBoolean,listString =new Stack<String>();
     //static Stack<String> stackInt,stackDouble,stackFloat,stackChar,stackBoolean,stackString =new Stack <>();
-    //static Stack<String> stackInt,stackDouble,stackFloat,stackChar,stackBoolean,stackString;
     static Stack<String>stackInt = new Stack<String>();
     static Stack<String>  stackDouble = new Stack<>();
     static Stack<String> stackFloat = new Stack<>();
@@ -23,33 +21,28 @@ public class VarNameCollector {
         
          
         switch(i){
-            case 0:
-                //stackInt = new Stack<>();
+            case 0:             
                 stackInt.push(str);
                 ExtractVariable(stackInt,i);
                 break;
-            case 1:
-                //stackDouble = new Stack<>();
+            case 1:   
                 stackDouble.push(str);
                 ExtractVariable(stackDouble,i);
                 break;
             case 2:
-                //stackFloat = new Stack<>();
+              
                 stackFloat.push(str);
                 ExtractVariable(stackFloat,i);
                 break;
             case 3:
-                //stackChar = new Stack<>();
                 stackChar.push(str);
                 ExtractVariable(stackChar,i);
                 break;
             case 4:
-                //stackBoolean = new Stack<>();
                 stackBoolean.push(str);
                 ExtractVariable(stackBoolean,i);
                 break;
             case 5:
-                //stackString = new Stack<>();
                 stackString.push(str);
                 ExtractVariable(stackString,i);
                 break;
@@ -108,7 +101,8 @@ public class VarNameCollector {
             for(int j=1; j<arr.length; j++){
                 String variable = arr[j];
                 variable = variable.trim();
-                if(Pattern.matches("\\d",variable)) continue;
+                String pattern = "[ \\d* | ([0-9]\\.[0-9]*) ]+";
+                if(Pattern.matches(pattern,variable)) continue;
                 stack.push(variable);
             }
             
@@ -124,27 +118,27 @@ public class VarNameCollector {
             switch(i){
                 case 0:
                     stack = stackInt;
-                    System.out.println("\n====Integer Variables====\n");
+                    System.out.println("\n==== INTEGER VARIABLES ====\n");
                     break;
                 case 1:
                     stack = stackDouble;
-                    System.out.println("\n====Double Variables====\n");
+                    System.out.println("\n==== DOUBLE VARIABLES ====\n");
                     break;
                 case 2:
                     stack = stackFloat;
-                    System.out.println("\n====Float Variables====\n");
+                    System.out.println("\n==== FLOAT VARIABLES ====\n");
                     break;
                 case 3:
                     stack = stackChar;
-                    System.out.println("\n====Char Variables====\n");
+                    System.out.println("\n==== CHAR VARIABLES ====\n");
                     break;
                 case 4:
                     stack = stackBoolean;
-                    System.out.println("\n====Boolean Variables====\n");
+                    System.out.println("\n==== BOOLEAN VARIABLES ====\n");
                     break;
                 case 5:
                     stack = stackString;
-                    System.out.println("\n====String Variables====\n");
+                    System.out.println("\n==== STRING VARIABLES ====\n");
                     break;
             }
             if(!stack.empty()) {
@@ -157,7 +151,7 @@ public class VarNameCollector {
             System.out.println();
             
         }
-        
+        System.out.println("\n======================================================================\n");
         
     }
     

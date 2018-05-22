@@ -19,13 +19,10 @@ public class Main {
         while(in.hasNextLine()){
             str = in.nextLine();
             //System.out.println(str);
-            //VarNameCollector obj = new VarNameCollector();
-            
             for(int i=0; i<tokens.length; i++){
                 
                 if(str.contains(tokens[i])){
-                    VarNameCollector obj = new VarNameCollector();
-                    obj.PushInRespectiveStack(str,i);
+                    obj1.PushInRespectiveStack(str,i);
                 }
                 
             }
