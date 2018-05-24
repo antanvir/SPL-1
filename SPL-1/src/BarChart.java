@@ -24,7 +24,7 @@ public class BarChart extends ApplicationFrame {
          true, true, false);
          
       ChartPanel chartPanel = new ChartPanel( barChart );        
-      chartPanel.setPreferredSize(new java.awt.Dimension( 650 , 700 ) );        
+      chartPanel.setPreferredSize(new java.awt.Dimension( 450 , 600 ) );        
       setContentPane( chartPanel ); 
    }
    
@@ -53,8 +53,8 @@ public class BarChart extends ApplicationFrame {
    }
    
    public static void main( String[ ] args ) {
-      BarChart chart = new BarChart("Car Usage Statistics", 
-         "Which car do you like?");
+      BarChart chart = new BarChart("Variable Count Statistics", 
+         "Variables of Primitive Types");
       chart.pack( );        
       RefineryUtilities.centerFrameOnScreen( chart );        
       chart.setVisible( true ); 

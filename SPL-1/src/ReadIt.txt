@@ -44,6 +44,9 @@ public class Read {
         double AreaOfCircle, radius;  char ch='T';
         String str = "This is a text file" , str2 = "sample string" ;
 
+        float count=1.0, divider=2.0;
+        boolean flag = false;
+
         result = Add();
         System.out.println( addMsg + result);
 
