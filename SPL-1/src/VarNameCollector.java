@@ -59,10 +59,17 @@ public class VarNameCollector {
         tokenPosition= str.indexOf(tokens[i]);
         
         if(tokenPosition>0){
+            
             String substr = str.substring(0,tokenPosition);
-            str = str.replaceAll(substr, " ");
+            if(substr.contains("(")){
+                substr = substr.replace('(', ' ');
+                str = str.replace(')', ' ');
+            }
+            str = str.replaceFirst(substr, "");
             tokenPosition= str.indexOf(tokens[i]);
+            
         }
+        
         semicolonPosition = str.indexOf(";");
         assignOperatorPos = str.indexOf("=");
         commaPosition = str.indexOf(",");
