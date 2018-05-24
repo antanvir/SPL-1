@@ -54,13 +54,16 @@ public class VarNameCollector {
     public void ExtractVariable(Stack<String> stack, int i){
         
         int tokenPosition, semicolonPosition, assignOperatorPos, commaPosition;
+        int quoteStart, quoteEnd;
+        String substr; 
+        
         String str = stack.pop();
         
         tokenPosition= str.indexOf(tokens[i]);
         
         if(tokenPosition>0){
             
-            String substr = str.substring(0,tokenPosition);
+            substr = str.substring(0,tokenPosition);
             if(substr.contains("(")){
                 substr = substr.replace('(', ' ');
                 str = str.replace(')', ' ');
@@ -102,6 +105,20 @@ public class VarNameCollector {
             if(assignOperatorPos!=-1 && commaPosition==-1)
                 str = str.substring(tokenPosition, assignOperatorPos);
             else str = str.substring(tokenPosition, semicolonPosition);
+            
+            String toBeNulled="";
+            while(str.contains("\"")){
+                if(str.contains("\"")) toBeNulled = "\"";
+                else if(str.contains("'")) toBeNulled = "'";
+
+                quoteStart = str.indexOf(toBeNulled);
+                str = str.replaceFirst(toBeNulled, "");
+                quoteEnd = str.indexOf(toBeNulled);
+
+                substr = str.substring(quoteStart,quoteEnd+1);
+                str = str.replace(substr, "");
+            }
+        
             String arr[];
             arr = str.split("[ ,=]+");
             

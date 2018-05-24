@@ -14,11 +14,12 @@ public class Main {
         String str;
         
         VarNameCollector obj1 = new VarNameCollector();
-        LocalVariableOfMethods obj2 = new LocalVariableOfMethods();
+        LocalVariableCounting obj2 = new LocalVariableCounting();
         
         while(in.hasNextLine()){
             str = in.nextLine();
             //System.out.println(str);
+            obj2.CheckPointOfMethods(str);
             for(int i=0; i<tokens.length; i++){
                 
                 if(str.contains(tokens[i])){
@@ -28,6 +29,6 @@ public class Main {
             }
         }
         obj1.PrintVariables();
-        
+        obj2.PrintVariables();
     }
 }

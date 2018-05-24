@@ -41,7 +41,8 @@ public class Read {
         String addMsg ="sum is: ";
         String subMsg = "Subtraction result : ";
         int number=10;
-        double AreaOfCircle, radius;  char ch="T";
+        double AreaOfCircle, radius;  char ch='T';
+        String str = "This is a text file" , str2 = "sample string" ;
 
         result = Add();
         System.out.println( addMsg + result);
