@@ -4,13 +4,22 @@ package forspl;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.Scanner;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
-public class Main {
+public class Main extends Thread{
     
-    public static void main(String[] args)throws FileNotFoundException{
+   //public static void main(String[] args)throws FileNotFoundException{
+    @Override
+    public void run(){
         String tokens[] = {"int ","double ","float ","char ","boolean ","String "};
         
-        Scanner in = new Scanner(new File("D:\\Users\\My-PC\\Documents\\NetBeansProjects\\ForSPL\\ReadIt.txt"));
+        Scanner in = null;
+        try {
+            in = new Scanner(new File("D:\\Users\\My-PC\\Documents\\NetBeansProjects\\ForSPL\\ReadIt.txt"));
+        } catch (FileNotFoundException ex) {
+            Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
+        }
         String str;
         
         VarNameCollector obj1 = new VarNameCollector();
