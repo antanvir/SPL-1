@@ -1,4 +1,3 @@
-
 package forspl;
 import forspl.LocalVariableCounting;
 
@@ -18,7 +17,7 @@ public class BarChart extends ApplicationFrame {
       JFreeChart barChart = ChartFactory.createBarChart(
          chartTitle,           
          "VARIABLES",            
-         "Number Of Times Found",            
+         "Number Of Variables Found",            
          createDataset(),          
          PlotOrientation.VERTICAL,           
          true, true, false);

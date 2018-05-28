@@ -1,4 +1,3 @@
-
 package forspl;
 import forspl.BarChart;
 
@@ -158,8 +157,9 @@ public class LocalVariableCounting {
                     countString++;
                     break;
             }
-            BarChart bar = new BarChart("","");
-            bar.setVisible(false);
+            /*BarChart bar = new BarChart("","");
+            bar.setVisible(false);*/
+            
             BarChart.main(new String[]{});
             
         }
@@ -221,10 +221,6 @@ public class LocalVariableCounting {
         
     }
 
-    static class java {
-
-        public java() {
-        }
-    }
+   
     
 }

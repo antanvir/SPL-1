@@ -1,4 +1,3 @@
-
 package forspl;
 
 import java.io.File;
@@ -16,7 +15,7 @@ public class Main extends Thread{
         
         Scanner in = null;
         try {
-            in = new Scanner(new File("D:\\Users\\My-PC\\Documents\\NetBeansProjects\\ForSPL\\ReadIt.txt"));
+            in = new Scanner(new File("C:\\Users\\antan\\eclipse-workspace\\ForSpl\\ReadIt.txt"));
         } catch (FileNotFoundException ex) {
             Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
         }
