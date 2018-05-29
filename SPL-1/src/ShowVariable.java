@@ -48,7 +48,7 @@ public class ShowVariable {
 	private void initialize() {
 		frame = new JFrame();
 		frame.getContentPane().setLayout(null);
-		frame.setBounds(100, 100, 500, 600);
+		frame.setBounds(100, 100, 530, 350);
 		
 		JTabbedPane tabbedPane = new JTabbedPane(JTabbedPane.TOP);
 		tabbedPane.setBounds(10, 11, 482, 274);
@@ -80,6 +80,7 @@ public class ShowVariable {
 		int value = VarNameCollector.count;
 		String Bstr = "Each int variable takes 4 Bytes\n\n";
 		Bstr = Bstr + value+"x"+"4 Bytes = "+value*4 +" Bytes\n";
+		str= str+"-------------------------\nTotal "+ value+" variables found\n";
 		
 		textPane.setText(str);
 		
@@ -119,7 +120,7 @@ public class ShowVariable {
 		int value1 = VarNameCollector.count;
 		String Bstr1 = "Each double variable takes 8 Bytes\n\n";
 		Bstr1 = Bstr1 + value1+"x"+"8 Bytes = "+value1*8 +" Bytes\n";
-		
+		str1= str1+"-------------------------\nTotal "+ value1+" variables found\n";
 		textPane_2.setText(str1);
 		textPane_3.setText(Bstr1);
 			
@@ -152,7 +153,7 @@ public class ShowVariable {
 		int value2 = VarNameCollector.count;
 		String Bstr2 = "Each float variable takes 4 Bytes\n\n";
 		Bstr2 = Bstr2 + value2+"x"+"4 Bytes = "+value2*4 +" Bytes\n";
-		
+		str2= str2+"-------------------------\nTotal "+ value2+" variables found\n";
 		textPane_4.setText(str2);
 		textPane_5.setText(Bstr2);
 			
@@ -186,7 +187,7 @@ public class ShowVariable {
 		int value3 = VarNameCollector.count;
 		String Bstr3 = "Each char variable takes 1 Bytes\n\n";
 		Bstr3 = Bstr3 + value3+"x"+"1 Bytes = "+value3*1 +" Bytes\n";
-		
+		str3= str3+"-------------------------\nTotal "+ value3+" variables found\n";
 		textPane_6.setText(str3);
 		textPane_7.setText(Bstr3);
 		
@@ -220,7 +221,7 @@ public class ShowVariable {
 		int value4 = VarNameCollector.count;
 		String Bstr4 = "Each boolean variable takes 8 Bytes\n\n";
 		Bstr4 = Bstr4 + value4+"x"+"1 Bytes = "+value4*1 +" Bytes\n";
-		
+		str4= str4+"-------------------------\nTotal "+ value4+" variables found\n";
 		textPane_8.setText(str4);
 		textPane_9.setText(Bstr4);
 		
@@ -255,7 +256,7 @@ public class ShowVariable {
 		int value6 = VarNameCollector.count1;
 		String Bstr5 = "Each String variable takes Bytes according to its length\n\n";
 		Bstr5 = Bstr5 + value6+" Strings x (length of each String) = "+value5*1 +" Bytes\n";
-		
+		str5= str5+"-------------------------\nTotal "+ value6+" variables found\n";
 		textPane_10.setText(str5);
 		textPane_11.setText(Bstr5);
 	}

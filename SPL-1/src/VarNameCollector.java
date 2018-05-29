@@ -20,6 +20,7 @@ public class VarNameCollector {
     
     public static String GetAllVariables(int i) {
     	count =0;
+    	count1=0;
     	//int len =0;
     	String str = "";
     	Stack<String> stack = null ;
