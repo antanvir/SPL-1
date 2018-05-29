@@ -15,6 +15,53 @@ public class VarNameCollector {
     static Stack<String>    stackChar = new Stack<>();
     static Stack<String>    stackBoolean = new Stack<>();
     static Stack<String>    stackString = new Stack<>();
+    public static int count, count1=0;
+    
+    
+    public static String GetAllVariables(int i) {
+    	count =0;
+    	//int len =0;
+    	String str = "";
+    	Stack<String> stack = null ;
+        switch(i){
+            case 0:
+                stack = stackInt;
+                break;
+            case 1:
+                stack = stackDouble;    
+                break;
+            case 2:
+                stack = stackFloat;
+                break;
+            case 3:
+                stack = stackChar;
+                break;
+            case 4:
+                stack = stackBoolean;
+                break;
+            case 5:
+                stack = stackString;
+                break;
+        }
+        if(!stack.empty()) {
+        	//int len =0;
+            for(String item: stack){
+                str= str+item+"\n";
+                if(i==5) {
+                	count+=item.length();
+                	count1++;
+                }
+                else count++;
+            }
+        }
+        else {
+        	str= "No Variable of this type found in the program.\n";
+        }
+        
+        str= str+"\n";
+        return str;
+    	
+    }
     
     public void PushInRespectiveStack(String str,int i){
         

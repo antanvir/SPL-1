@@ -28,7 +28,7 @@ public class BarChart extends ApplicationFrame {
    }
    
    private CategoryDataset createDataset( ) {
-      final String Int = "int";        
+	  final String Int = "int";        
       final String Double = "double";        
       final String Float = "float";        
       final String Char = "char";        
@@ -39,7 +39,15 @@ public class BarChart extends ApplicationFrame {
       
       final DefaultCategoryDataset dataset = 
       new DefaultCategoryDataset( );  
-
+      
+      /*int ci, cd, cf, cc, cb, cs;
+      ci =LocalVariableCounting.countInt;	cd=LocalVariableCounting.countDouble;
+      cf=LocalVariableCounting.countFloat;	cc=LocalVariableCounting.countChar;
+      cb=LocalVariableCounting.countBoolean;	cs=LocalVariableCounting.countString;
+      
+      Int= Int+"\n"+ "["+ci+"x4 = "+ (ci*4)+" Bytes]";
+      */
+      
       dataset.addValue(LocalVariableCounting.countInt , variables , Int );        
       dataset.addValue( LocalVariableCounting.countDouble , variables , Double );        
       dataset.addValue( LocalVariableCounting.countFloat ,variables ,Float  ); 
